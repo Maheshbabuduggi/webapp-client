@@ -14,7 +14,9 @@ import { HeaderComponent } from '../shared/header/header';
   styleUrl: './hr.css'
 })
 export class HrComponent implements OnInit {
+
   data=signal<any>(null);
+
   user=signal<CurrentUser | null>(null);
 
   constructor(

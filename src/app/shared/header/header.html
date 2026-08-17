@@ -1,0 +1,24 @@
+<header class="topbar">
+  <div class="logo">
+    <a routerLink="/dashboard" class="logo-link">Employee Portal</a>
+  </div>
+
+  @if (user) {
+    <nav class="nav-links">
+      <a routerLink="/dashboard" class="nav-link">Dashboard</a>
+
+      @if (user.isAdmin || user.isHr) {
+        <a routerLink="/hr" class="nav-link">HR</a>
+      }
+
+      @if (user.isAdmin || user.isHrManager) {
+        <a routerLink="/hr-manager" class="nav-link">HR Manager</a>
+      }
+    </nav>
+
+    <div class="user-section">
+      <span>Welcome, {{ user.name }}</span>
+      <button type="button" (click)="onLogout()">Logout</button>
+    </div>
+  }
+</header>

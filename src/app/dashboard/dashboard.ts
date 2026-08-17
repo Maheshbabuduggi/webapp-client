@@ -15,6 +15,7 @@ import {
 import {
   CurrentUser
 } from '../models/user.model';
+import { HeaderComponent } from '../shared/header/header';
 
 
 @Component({
@@ -23,7 +24,7 @@ import {
   standalone: true,
 
   imports: [
-    RouterLink
+    RouterLink,HeaderComponent
   ],
 
   templateUrl: './dashboard.html',

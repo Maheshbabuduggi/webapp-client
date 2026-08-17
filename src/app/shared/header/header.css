@@ -1,0 +1,20 @@
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+.logo { font-size: 20px; font-weight: 600; }
+.logo-link { color: #222; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; }
+.nav-link { color: #444; text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 5px; }
+.nav-link:hover { background: #f0f1f3; }
+.user-section { display: flex; align-items: center; gap: 20px; }
+.user-section button {
+  padding: 8px 16px; border: none; cursor: pointer; border-radius: 5px;
+  background: #e64545; color: white;
+}
+.user-section button:hover { background: #cf3a3a; }

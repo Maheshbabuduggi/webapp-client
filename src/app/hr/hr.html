@@ -1,0 +1,53 @@
+<div class="page">
+
+  <h1>
+    {{ data?.title }}
+  </h1>
+
+
+  <p>
+    {{ data?.message }}
+  </p>
+
+
+  <p>
+    Department:
+    <strong>
+      {{ data?.department }}
+    </strong>
+  </p>
+
+
+  <p>
+    Requested By:
+    <strong>
+      {{ data?.requestedBy }}
+    </strong>
+  </p>
+
+
+  <h2>
+    Employees
+  </h2>
+
+
+  @for (
+    employee of data?.employees;
+    track employee.id
+  ) {
+
+    <div class="employee">
+
+      <strong>
+        {{ employee.name }}
+      </strong>
+
+      <span>
+        {{ employee.role }}
+      </span>
+
+    </div>
+
+  }
+
+</div>

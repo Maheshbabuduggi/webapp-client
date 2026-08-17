@@ -1,0 +1,90 @@
+<div class="dashboard">
+
+  <header class="topbar">
+
+    <div class="logo">
+      Employee Portal
+    </div>
+
+
+    @if (user) {
+
+      <div class="user-section">
+
+        <span>
+          Welcome,
+          {{ user.name }}
+        </span>
+
+
+        <button
+          type="button"
+          (click)="logout()">
+
+          Logout
+
+        </button>
+
+      </div>
+
+    }
+
+  </header>
+
+
+  <main class="content">
+
+    <h1>
+      Dashboard
+    </h1>
+
+
+    <p>
+      Select a section.
+    </p>
+
+
+    <div class="links">
+
+
+      <!-- HR -->
+
+      @if (
+        user?.isAdmin ||
+        user?.isHr
+      ) {
+
+        <a
+          routerLink="/hr"
+          class="dashboard-link">
+
+          HR
+
+        </a>
+
+      }
+
+
+      <!-- HR Manager -->
+
+      @if (
+        user?.isAdmin ||
+        user?.isHrManager
+      ) {
+
+        <a
+          routerLink="/hr-manager"
+          class="dashboard-link">
+
+          HR Manager
+
+        </a>
+
+      }
+
+
+    </div>
+
+  </main>
+
+</div>

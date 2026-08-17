@@ -1,0 +1,19 @@
+.page {
+  padding: 40px;
+}
+
+.employee {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 15px 20px;
+
+  margin-bottom: 10px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 6px;
+}

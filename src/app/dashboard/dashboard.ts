@@ -1,6 +1,6 @@
 import {
   Component,
-  OnInit
+  OnInit,signal
 } from '@angular/core';
 
 import {
@@ -34,8 +34,7 @@ import { HeaderComponent } from '../shared/header/header';
 export class DashboardComponent
   implements OnInit {
 
-  user:
-    CurrentUser | null = null;
+  user=signal<CurrentUser | null>(null);
 
 
   constructor(
@@ -61,7 +60,7 @@ export class DashboardComponent
 
         next: user => {
 
-          this.user = user;
+          this.user.set(user);
         },
 
 

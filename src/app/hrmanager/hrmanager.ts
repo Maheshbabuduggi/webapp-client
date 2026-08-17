@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import { HeaderComponent } from '../shared/header/header';
 })
 export class HrManagerComponent implements OnInit {
   data: any = null;
-  user: CurrentUser | null = null;
+  user = signal<CurrentUser | null>(null);
 
   constructor(
     private http: HttpClient,
@@ -25,7 +25,7 @@ export class HrManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.getCurrentUser().subscribe({
-      next: user => this.user = user,
+      next: user => this.user.set(user),
       error: () => this.router.navigate(['/login'])
     });
 

@@ -1,64 +1,10 @@
-<div class="dashboard">
+<app-header [user]="user()" (logoutClick)="logout()"></app-header>
 
-  
-<app-header
-  [user]="user"
-  (logoutClick)="logout()">
-</app-header>
-
-  <main class="content">
-
-    <h1>
-      Dashboard
-    </h1>
-
-
-    <p>
-      Select a section.
-    </p>
-
-
-    <div class="links">
-
-
-      <!-- HR -->
-
-      @if (
-        user?.isAdmin ||
-        user?.isHr
-      ) {
-
-        <a
-          routerLink="/hr"
-          class="dashboard-link">
-
-          HR
-
-        </a>
-
-      }
-
-
-      <!-- HR Manager -->
-
-      @if (
-        user?.isAdmin ||
-        user?.isHrManager
-      ) {
-
-        <a
-          routerLink="/hr-manager"
-          class="dashboard-link">
-
-          HR Manager
-
-        </a>
-
-      }
-
-
-    </div>
-
-  </main>
-
+<div class="links">
+  @if (user()?.isAdmin || user()?.isHr) {
+    <a routerLink="/hr" class="dashboard-link">HR</a>
+  }
+  @if (user()?.isAdmin || user()?.isHrManager) {
+    <a routerLink="/hr-manager" class="dashboard-link">HR Manager</a>
+  }
 </div>

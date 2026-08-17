@@ -1,15 +1,15 @@
 <app-header [user]="user()" (logoutClick)="logout()"></app-header>
 
 <div class="page">
-  <h1>{{ data?.title }}</h1>
-  <p>{{ data?.message }}</p>
-  <p>Department: <strong>{{ data?.department }}</strong></p>
-  <p>Role: <strong>{{ data?.role }}</strong></p>
-  <p>Requested By: <strong>{{ data?.requestedBy }}</strong></p>
-  <p class="as-of">As of: <strong>{{ data?.asOf | date:'medium' }}</strong></p>
+  <h1>{{ data()?.title }}</h1>
+  <p>{{ data()?.message }}</p>
+  <p>Department: <strong>{{ data()?.department }}</strong></p>
+  <p>Role: <strong>{{ data()?.role }}</strong></p>
+  <p>Requested By: <strong>{{ data()?.requestedBy }}</strong></p>
+  <p class="as-of">As of: <strong>{{ data()?.asOf | date:'medium' }}</strong></p>
 
   <h2>Employees</h2>
-  @for (employee of data?.employees; track employee.id) {
+  @for (employee of data()?.employees; track employee.id) {
     <div class="employee">
       <strong>{{ employee.name }}</strong>
       <span>{{ employee.status }}</span>

@@ -14,7 +14,7 @@ import { HeaderComponent } from '../shared/header/header';
   styleUrl: './hrmanager.css'
 })
 export class HrManagerComponent implements OnInit {
-  data: any = null;
+  data=signal<any>(null);
   user = signal<CurrentUser | null>(null);
 
   constructor(
@@ -30,7 +30,7 @@ export class HrManagerComponent implements OnInit {
     });
 
     this.http.get('https://localhost:7065/api/HrManager').subscribe({
-      next: response => this.data = response,
+      next: response => this.data.set(response),
       error: error => console.error('HR Manager API error:', error)
     });
   }

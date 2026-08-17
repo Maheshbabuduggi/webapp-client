@@ -15,11 +15,17 @@ export class AuthService {
   }
 
   getCurrentUser():Observable<CurrentUser> {
-    return this.http.get<CurrentUser>(`${this.baseUrl}/me`);
+    return this.http.get<CurrentUser>(`${this.baseUrl}/me`,
+      {
+        withCredentials: true
+      });
   }
 
   logout(): Observable<any> {
-    return this.http.post(`${this.baseUrl}/logout`, {});
+    return this.http.post(`${this.baseUrl}/logout`, {},
+      {
+        withCredentials: true
+      });
   }
 
 }

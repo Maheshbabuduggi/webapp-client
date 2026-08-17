@@ -1,4 +1,113 @@
-.as-of {
-  color: #666;
-  font-size: 13px;
+/* =====================================================
+   HR MANAGER
+   ===================================================== */
+
+.hr-manager-container {
+  min-height: calc(100vh - 70px);
+
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #eef2ff 100%
+    );
+}
+
+.hr-manager-container h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 750;
+}
+
+/* Manager cards */
+
+.manager-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin-top: 28px;
+}
+
+.manager-card {
+  padding: 24px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: all 0.25s ease;
+}
+
+.manager-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.manager-card h3 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.manager-card .number {
+  margin-top: 12px;
+
+  font-size: 32px;
+
+  font-weight: 750;
+
+  color: var(--primary);
+}
+
+/* Actions */
+
+.manager-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.manager-actions button {
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.manager-actions button:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+  .manager-grid {
+    grid-template-columns: 1fr;
+  }
 }

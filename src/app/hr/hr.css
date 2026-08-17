@@ -1,24 +1,132 @@
-.page {
-  padding: 40px;
+/* =====================================================
+   HR
+   ===================================================== */
+
+.hr-container {
+  min-height: calc(100vh - 70px);
+
+  padding: 30px;
+
+  background: #f8fafc;
 }
 
-.employee {
-  display: flex;
+.hr-container h1 {
+  margin: 0;
 
-  justify-content: space-between;
+  font-size: 28px;
+  font-weight: 750;
+}
 
-  padding: 15px 20px;
+.hr-container .subtitle {
+  margin-top: 6px;
 
-  margin-bottom: 10px;
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* Employee cards */
+
+.employee-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-top: 28px;
+}
+
+.employee-card {
+  padding: 22px;
 
   background: white;
 
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 
-  border-radius: 6px;
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: all 0.25s ease;
 }
 
-.as-of {
-  color: #666;
+.employee-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.employee-card h3 {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+.employee-card p {
+  margin: 7px 0;
+
+  color: #64748b;
+
   font-size: 13px;
+}
+
+/* Table */
+
+.employee-table {
+  width: 100%;
+
+  margin-top: 25px;
+
+  border-collapse: collapse;
+
+  background: white;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.employee-table th {
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  text-align: left;
+
+  font-size: 13px;
+}
+
+.employee-table td {
+  padding: 15px 16px;
+
+  border-top: 1px solid var(--border);
+
+  color: #334155;
+
+  font-size: 14px;
+}
+
+.employee-table tr:hover {
+  background: #f8fafc;
+}
+
+@media (max-width: 800px) {
+  .employee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hr-container {
+    padding: 20px 15px;
+  }
+
+  .employee-table {
+    display: block;
+    overflow-x: auto;
+  }
 }
